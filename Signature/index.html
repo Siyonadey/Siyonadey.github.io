@@ -1,0 +1,155 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="css.css" >
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js.js" ></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+
+
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <title>Shakambhari Signature Creation</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+    <div class="container">
+    <a class="navbar-brand" href="#">Shakmbhari Signature builder</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    </div>
+</nav>
+
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header"> <div align="left" style="vertical-align:bottom;float:left" >Enter Your Details Here  
+                                       </div> 
+                                           <div align="right" style="vertical-align:top">
+                                               <a class="btn btn-link" href="Webmail Guidelines for creating Email Signature.pdf" target="_blank" role="button">Web Guideline</a>                                  
+                                            </div></div>
+                        <div class="card-body">
+                            <form name="my-form" onsubmit="return validform()" action="Signature.php" method="post">
+                               <div class="form-group row">
+                                    <label for="Location" class="col-md-4 col-form-label text-md-right">Location</label>
+                                    <div class="col-md-6">
+                                        <select name="location" id="location" class="form-control" >
+                                        <option value="1"   >HO </option>
+                                        <option value="2"   >Plants</option>
+                                       </select>
+                                        
+                                    </div>
+                                </div>
+                              
+                                <div class="form-group row">
+                                    <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="name" class="form-control" name="name" value="" >
+                                    </div>
+                                </div>
+                                
+                                 <div class="form-group row">
+                                    <label for="designation" class="col-md-4 col-form-label text-md-right">Designation</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="user_designation" class="form-control" name="user_designation" value="">
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                    <label for="tel_number" class="col-md-4 col-form-label text-md-right">Telephone Number</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="tel_number" name="tel_number"  class="form-control" value="+91-33-">
+                                    </div>
+                                </div>
+                                
+                                 <div class="form-group row">
+                                    <label for="desk_number" class="col-md-4 col-form-label text-md-right">Desk Number</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="desk_number" name="desk_number"  class="form-control" value=" +91-33-">
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                    <label for="mobile_number" class="col-md-4 col-form-label text-md-right">Mobile</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="mobile_number"  maxlength="10" name="mobile_number" class="form-control" value="">
+                                    </div>
+                                </div>                                 
+
+                                <div class="form-group row">
+                                    <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="email_address" class="form-control" name="email_address" value="">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row" id="address_div" style="display:none">
+                                    <label for="address" class="col-md-4 col-form-label text-md-right">Office Address</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="address" class="form-control" name="address" value="">
+                                    </div>
+                                </div>
+                              
+
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                    Signature Create
+                                    </button>
+                                </div>                                   
+                             
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+<script>
+
+$('#location').on('change', function() {  
+    
+        var selectedCountry = this.value;
+
+        if(selectedCountry=="1")
+		{
+			 // alert("1");
+			  $("#address_div").hide();
+			  $("#address").val('');
+			  
+			
+		}
+		else
+		{
+		 // alert("2");
+		  $("#address_div").show();	
+		
+		}
+
+    });
+
+
+</script>
+</body>
+</html>
